@@ -3,6 +3,13 @@ import TodoList from "./components/TodoList";
 import "./App.css";
 import uuidv4 from "uuid/v4";
 
+// Structure
+// Render list of todos
+// Add todo
+// Toggle todo
+// Clear all completed todos
+// State persistence
+
 function App(props) {
   const [todos, setTodos] = useState([]);
 
@@ -29,7 +36,6 @@ function App(props) {
 
   const onClearAllCompleted = (e) => {
     e.preventDefault();
-
     setTodos(todos.filter((todo) => !todo.completed));
   };
 

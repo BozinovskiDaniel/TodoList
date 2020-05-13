@@ -1,12 +1,18 @@
 import React from "react";
-import Todo from "./Todo.js";
-
 function TodoList(props) {
   return (
-    <div>
+    <div className="todoList">
       {props.todos.map((todo) => {
         return (
-          <Todo key={todo.id} todoItem={todo} toggleTodo={props.toggleTodo} />
+          <li>
+            <p>{todo.name}</p>
+            <input
+              className="checkbox"
+              type="checkbox"
+              checked={todo.completed}
+              onClick={() => props.toggleTodo(todo.id)}
+            />
+          </li>
         );
       })}
     </div>
